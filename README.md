@@ -1,16 +1,35 @@
-# React + Vite
+# AI Skincare Recommendation System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-performance, AI-powered skincare intelligence platform that provides expert-level, scientifically grounded product insights.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **AI Chatbot**: RAG-based chatbot with advanced semantic matching for skincare advice.
+- **Product Analysis**: Intelligent recommendation engine mapping natural language to product keywords.
+- **Community Feedback**: Secure feedback system using neural analysis to verify genuine reviews.
+- **Interactive UI**: Search, product comparison, and detailed skincare profiles.
 
-## React Compiler
+## Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `/client`: React (Vite) frontend application.
+- `/server`: Node.js backend API.
+- `/ml_service`: Python-based machine learning and RAG services.
+- `/database`: SQL schemas and initialization scripts.
 
-## Expanding the ESLint configuration
+## Setup Instructions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Backend
+1. Go to `/server`
+2. Run `npm install`
+3. Configure your `.env` file
+4. Start the server with `npm run dev`
+
+### Frontend
+1. Go to `/client`
+2. Run `npm install`
+3. Start the development server with `npm run dev`
+
+### ML Service
+1. Go to `/ml_service`
+2. Install dependencies: `pip install -r requirements.txt` (if available)
+3. Run the service scripts as needed.
