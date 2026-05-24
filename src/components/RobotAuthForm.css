@@ -1,0 +1,229 @@
+.robot-auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 2rem;
+}
+
+.robot-avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.robot-avatar:hover {
+    transform: translateY(-5px);
+}
+
+.antenna {
+    width: 4px;
+    height: 40px;
+    background: var(--text-muted);
+    position: relative;
+}
+
+.antenna-bulb {
+    width: 16px;
+    height: 16px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    left: -6px;
+    box-shadow: 0 0 10px var(--accent-color);
+    animation: pulse 2s infinite alternate;
+}
+
+.robot-face {
+    width: 140px;
+    height: 110px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border: 4px solid var(--accent-color);
+    background: var(--sidebar-bg);
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.2) inset;
+}
+
+.eyes-container {
+    display: flex;
+    gap: 30px;
+}
+
+.eye {
+    width: 25px;
+    height: 25px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--accent-color);
+    transition: height 0.2s, transform 0.2s;
+}
+
+.mouth {
+    width: 50px;
+    height: 10px;
+    background: var(--text-muted);
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mouth-line {
+    width: 100%;
+    height: 2px;
+    background: var(--bg-color);
+}
+
+/* Processing animations */
+.processing .eye {
+    height: 5px;
+    transform: translateY(10px);
+    animation: blinkFast 0.5s infinite;
+}
+
+.processing .mouth {
+    animation: speak 0.2s infinite alternate;
+    background: var(--accent-color);
+}
+
+.processing .antenna-bulb {
+    animation: pulseFast 0.2s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+        box-shadow: 0 0 5px var(--accent-color);
+    }
+
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 20px var(--accent-color);
+    }
+}
+
+@keyframes pulseFast {
+    0% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes blinkFast {
+
+    0%,
+    48%,
+    52%,
+    100% {
+        height: 25px;
+    }
+
+    50% {
+        height: 2px;
+    }
+}
+
+@keyframes speak {
+    0% {
+        height: 4px;
+    }
+
+    100% {
+        height: 16px;
+    }
+}
+
+/* Form Styles */
+.auth-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.auth-title {
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 0.5rem;
+}
+
+.input-group label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+}
+
+.input-group input {
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-color);
+    color: var(--text-main);
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.auth-btn {
+    padding: 1rem;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.auth-btn:hover:not(:disabled) {
+    background: var(--accent-hover);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.auth-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.toggle-auth {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.toggle-link {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.toggle-link:hover {
+    text-decoration: underline;
+}
